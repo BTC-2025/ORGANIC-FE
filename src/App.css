@@ -1,38 +1,143 @@
-.App {
-  text-align: center;
+/* Existing styles from previous */
+body {
+  font-family: 'Work Sans', sans-serif;
+  background-color: #f6f8f6;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bg-dark-mode {
+  background-color: #112111;
+  color: #ffffff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.primary {
+  background-color: #17cf17 !important;
+  border-color: #17cf17 !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.primary-text {
+  color: #17cf17 !important;
+}
+
+.header {
+  background-color: rgba(246, 248, 246, 0.8);
+  border-bottom: 1px solid rgba(23, 207, 23, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(5px);
+}
+
+.bg-dark-mode .header {
+  background-color: rgba(17, 33, 17, 0.8);
+  border-bottom: 1px solid rgba(23, 207, 23, 0.3);
+}
+
+.category-card:hover,
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  min-height: 60vh;
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  padding: 5rem 1rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBFDyJLexCrzhDZ2EReUrcWkc44YGauHRxNBjF_rIR8DtezoVgRpmaYllmNUDfrHI831kQkjVErHIfFi2AxJnB5HgB6we6zE_BIXM3PiqZGKLRr-Zy6M4xbjWJGmHMhIhPD145mt8RGR9lT0sZhqV-QzTP79yK9GxfYLFJ0aD8Mapo7XQuvWw_ZHqh9r9hBY1MX8HsCRheSDkuEtOlyP05lvhY9_S8XKjp6aqc3nGtdZ-U7nLxIeUtAvaWNcdOslc-tpfmcA5czdy06");
 }
 
-.App-link {
-  color: #61dafb;
+.product-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.product-card:hover .product-overlay {
+  opacity: 1;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem !important;
+}
+
+/* New styles for product listing page */
+.sidebar {
+  width: 16rem;
+  position: sticky;
+  top: 5rem;
+  height: calc(100vh - 5rem);
+  overflow-y: auto;
+  border-right: 1px solid #e5e7eb;
+}
+
+.bg-dark-mode .sidebar {
+  border-right: 1px solid #2d3748;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(167, 167, 167, 0.5);
+  border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(111, 111, 111, 0.5);
+}
+
+.bg-background-light {
+  background-color: #f6f8f6;
+}
+
+.bg-dark-mode .bg-background-light {
+  background-color: #112111;
+}
+
+.text-gray-700 {
+  color: #374151;
+}
+
+.bg-dark-mode .text-gray-700 {
+  color: #d1d5db;
+}
+
+.border-gray-200 {
+  border-color: #e5e7eb;
+}
+
+.bg-dark-mode .border-gray-200 {
+  border-color: #2d3748;
+}
+
+.bg-primary-10 {
+  background-color: rgba(23, 207, 23, 0.1);
+}
+
+.bg-dark-mode .bg-primary-10 {
+  background-color: rgba(23, 207, 23, 0.2);
+}
+
+.bg-primary-10:hover {
+  background-color: rgba(23, 207, 23, 0.2);
+}
+
+.bg-dark-mode .bg-primary-10:hover {
+  background-color: rgba(23, 207, 23, 0.3);
 }
